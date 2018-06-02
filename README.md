@@ -1,10 +1,29 @@
 # Laravel and Apache Docker Image
 
+ARM ready, tested on intel i7 and Raspberry-Pi 3 ARM 32b v7
+
 ## Deployment
 
-docker build .
+with another dockerfile : 
 
-but you need to enter your container and start apache2.
+    FROM lucasehlinger/laravel
+    COPY directory/to/app/ /home
+    RUN composer install
+    RUN chgrp -R www-data storage /home/bootstrap/cache && chmod -R ug+rwx storage /home/bootstrap/cache
+    RUN php artisan key:generate && php artisan view:cache
+
+with docker-compose
+
+    version: '2'
+    services:
+      web:
+        build : lucasehlinger/laravel
+        ports :
+          - "80:80"
+        expose:
+          - 80
+        volumes:
+          - ./:/home
 
 ## License
 

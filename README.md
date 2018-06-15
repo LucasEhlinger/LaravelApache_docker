@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Laravel and Apache Docker Image
 
 ARM ready, tested on intel i7 and Raspberry-Pi 3 ARM 32b v7
@@ -30,3 +31,6 @@ with docker-compose
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 
+=======
+# LaravelApache_docker
+>>>>>>> parent of bd00f89... initial commit

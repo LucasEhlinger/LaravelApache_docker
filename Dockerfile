@@ -87,5 +87,8 @@ RUN php -r "copy('https://phar.phpunit.de/phpunit.phar','/tmp/phpunit.phar');"
 RUN chmod +x /tmp/phpunit.phar
 RUN mv /tmp/phpunit.phar /usr/local/bin/phpunit
 
+#Cron Tab for laravel Schedule
+RUN apt install cron -y
+
 #Need : /etc/init.d/apache2 start
 WORKDIR /home
